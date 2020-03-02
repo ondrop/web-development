@@ -4,14 +4,10 @@
 		return isset($_GET[$name]) ?(string) $_GET[$name] : null;
 	};
 	$text = getGETParameter('text');
-	if ($text != null) 
+	if ($text !== null) 
 	{
 		header("Content-Type: text/plain");
-		$text = preg_replace('/\s\s+/', ' ' , $text);
+		$text = preg_replace('/ +/', ' ' , $text);
 		$text = trim($text, ' ');	
 		echo $text;
-	}
-	else
-	{
-		echo 'Text file is empty';
-	};	
+	};

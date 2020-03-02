@@ -4,7 +4,6 @@
 	$email = scandir($direction, 1);
 	$direction = $email[0];
 	$handle = fopen($direction, 'r');
-	$write_data = fwrite($handle, $data);
 	$data = file_get_contents($direction);
 	fclose($handle);
 	echo $data;

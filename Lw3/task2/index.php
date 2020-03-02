@@ -9,7 +9,8 @@
 	{
 		if (preg_match("/[a-zA-Z0-9]/", $identifier))
 		{
-			echo (preg_match("/^[a-zA-Z]$/i", $identifier[0]) ? 'Yes.' : 'No. First symbol is digit.');
+			$result = preg_match("/[a-zA-Z]/", $identifier[0]) ? 'Yes.' : 'No. First symbol is digit.';
+			echo $result;
 		}
 		else
 		{

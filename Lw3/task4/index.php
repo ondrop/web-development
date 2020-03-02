@@ -8,9 +8,8 @@
 	$email = getGETParameter('email');
 	$age = 'Age: ' . getGETParameter('age');
 	$direction = 'data/' . $email . '.txt';
-	$data = ($first_name . '</br>' . $last_name . '</br>' . 'Email: ' . $email . '</br>' . $age);
+	$email = 'Email: ' . getGETParameter('email');
+	$data = ($first_name . '</br>' . $last_name . '</br>' . $email . '</br>' . $age);
 	$handle = fopen($direction, 'w+');
-	$write_data = fwrite($handle, $data);
-	$data = file_get_contents($direction);
+	fwrite($handle, $data);
 	fclose($handle);
-	echo $data;
