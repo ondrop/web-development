@@ -5,16 +5,16 @@
 	};
 	$identifier = getGETParameter('identifier');
 	echo 'It is identifier?</br>';
-	if ($identifier != null)
+	if ($identifier != null)  
 	{
-		if (preg_match("/[a-zA-Z0-9]/", $identifier))
+		if (preg_match('/[^0-9]/', $identifier[0]))
 		{
-			$result = preg_match("/[a-zA-Z]/", $identifier[0]) ? 'Yes.' : 'No. First symbol is digit.';
-			echo $result;
+			echo 'No. identifier contains unknown symbols.';
 		}
 		else
 		{
-			echo 'No. identifier contains unknown symbols.';
+			$result = preg_match('/^[a-zA-Z0-9]/', $identifier) ? 'No. First symbol is digit or unknown symbols.' : 'Yes.';
+			echo $result;
 		};
 	}
 	else

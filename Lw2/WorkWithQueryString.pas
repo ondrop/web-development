@@ -17,9 +17,7 @@ BEGIN {GetQueryStringParameter}
           DELETE(QueryString, 1, Pos('=', QueryString));
           GetQueryStringParameter := Copy(QueryString, 1, Pos('&', QueryString) - 1);
           QueryString := ''
-        END
-      ELSE
-        GetQueryStringParameter := '';
+        END;
       DELETE(QueryString, 1, Pos('&', QueryString))
     END           
 END; {GetQueryStringParameter}                   
