@@ -46,7 +46,10 @@
 		//вычитается количество повторяющихся символов
 		foreach (count_chars($password, 1) as $matches => $val) 
 		{
-   			$safety = $safety - $val;
+			if ($val > 1) 
+			{
+   				$safety = $safety - $val;
+			};
 		};
 		echo 'Password Strength: ' . $safety, '</br>';
 	}
