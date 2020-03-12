@@ -1,1 +1,4 @@
-First Name: Andrey</br>Last Name: Okunev</br>Email: endryondrop@gmail.com</br>Age: 18
+First Name: Andrey
+Last Name: Okunev
+Email: endryondrop@gmail.com
+Age: 18

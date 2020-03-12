@@ -3,16 +3,21 @@
 	{
 		return isset($_GET[$name]) ?(string) $_GET[$name] : null;
 	};
-	$direction = 'C:/Study/University/Front-end/Lw/Lw3/task4/data/';
+	//$direction = glob('/data/');
+	$direction = '../task4/data/';
 	chdir($direction);
 	$email = getGETParameter('email');
 	$profile = $email . '.txt';
+	//chdir('/task4/data/' . $profile);
 	if (file_exists($profile)) 
 	{
 		$handle = fopen($profile, 'r');
-		$data = file_get_contents($profile);
+		while (!feof($handle)) 
+		{	
+			$data = fgets($handle);
+			echo nl2br($data);
+		};
 		fclose($handle);
-		echo $data;
 	}
 	else
 	{

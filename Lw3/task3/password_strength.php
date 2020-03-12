@@ -14,20 +14,20 @@
 		$safety = $safety + (4 * $len_str);
 		//К надежности прибавляется +(n*4), 
 		//где n - количество цифр в пароле
-		preg_match_all('/[0-9]/', $password, $matches, PREG_SET_ORDER);
+		preg_match_all("/[0-9]/", $password, $matches, PREG_SET_ORDER);
 		$safety = $safety + (4 * sizeof($matches));
 		//К надежности прибавляется +((len-n)*2) в случае, 
 		//если пароль содержит n символов в верхнем регистре
 		if (preg_match("/[A-Z]/", $password))
 		{
-			preg_match_all('/[A-Z]/', $password, $matches, PREG_SET_ORDER);
+			preg_match_all("/[A-Z]/", $password, $matches, PREG_SET_ORDER);
 			$safety = $safety + (($len_str - sizeof($matches)) * 2);
 		};
 		// К надежности прибавляется +((len-n)*2) в случае, 
 		//если пароль содержит n символов в нижнем регистре
 		if (preg_match("/[a-z]/", $password))
 		{
-			preg_match_all('/[a-z]/', $password, $matches, PREG_SET_ORDER);
+			preg_match_all("/[a-z]/", $password, $matches, PREG_SET_ORDER);
 			$safety = $safety + (($len_str - sizeof($matches)) * 2);
 		};
 		//Если пароль состоит только из цифр 
