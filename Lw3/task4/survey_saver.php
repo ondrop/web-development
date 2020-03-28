@@ -7,13 +7,14 @@
     $lastName = 'Last Name: ' . getGETParameter('last_name');
     $email = getGETParameter('email');
     $age = 'Age: ' . getGETParameter('age');
-    if (!file_exists('data')) 
+    define("FOLDER", "data/");
+    if (!file_exists(FOLDER)) 
     {
-        mkdir('data', 0777, true);
+        mkdir(FOLDER, 0777, true);
     }
     if ($email) 
     {
-        $direction = 'data/' . $email . '.txt';
+        $direction = FOLDER . $email . '.txt';
         $email = 'Email: ' . getGETParameter('email');
         $data = ($firstName . PHP_EOL . $lastName . PHP_EOL . $email . PHP_EOL . $age . PHP_EOL);
         $handle = fopen($direction, 'w+');
