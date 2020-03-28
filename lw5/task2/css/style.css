@@ -58,7 +58,7 @@ body
 .icon_film
 {
     content: url("../images/icons/video_icon.png");
-    margin: 17px 0 0 18px;	
+    margin: 17px 0 0 18px;  
 }
 
 .nav:hover .icon_vita,
@@ -181,7 +181,7 @@ ol
 }
 
 .text_quote
-{	
+{   
     max-height: 114px;
     margin: 25px 0 0 1px;
     font: italic 500 28px/42px Georgia, serif;
@@ -196,10 +196,10 @@ ol
 }
 
 .sign
-{	
+{   
     max-height: 16px;
     display: block;
-    color: #FFF;	
+    color: #FFF;    
     margin: 15px 0 0 5px;
     font: 600 16px/1em Open Sans, sans-serif;
 }
@@ -314,7 +314,7 @@ ol
 }
 
 .film_image
-{	
+{   
     background-color: #464646;
     overflow: hidden;
     height: 190px;
@@ -331,7 +331,7 @@ ol
     letter-spacing: 0.5px;
 }
 
-span.film_name
+.film_name
 {
     margin-left: 0; 
 }
