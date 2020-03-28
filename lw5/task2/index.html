@@ -10,15 +10,15 @@
     <div class="page_header_case">
       <div class="page_header">
         <a href="#my_vita" class="nav">
-          <img src="images/icons/about_me_icon.png" alt="about me icon" class="icon_vita">
+          <span class="icon_vita"></span>
           <div class="local_link">Обо мне</div>
         </a>
         <a href="#my_hobby" class="nav">
-          <img src="images/icons/hobby_icon.png" alt="hobby icon" class="icon_hobby">
+          <span class="icon_hobby"></span>
           <div class="local_link">Мое хобби</div>
         </a>
         <a href="#my_films" class="nav">
-          <img src="images/icons/video_icon.png" alt="video icon" class="icon_film">
+          <span class="icon_film"></span>
           <div class="local_link">Любимые фильмы</div>
         </a>
       </div>
@@ -26,11 +26,24 @@
     <div class="background_img">
       <img src="images/background.png" alt="background">
     </div>
-    <div class="case_top">
-      <div class="left_case">
+    <div class="case_top" id="my_vita">
+      <div class="above">    
         <div class="left_top_case">
           <img src="images/andrey_okunev.jpg" class="photo_pos" alt="Андрей Окунев">
         </div>
+        <div class="right_case">  
+          <div class="right_top_case">
+            <img src="images/quotes.png" class="quote" alt="Цитата">
+            <div class="div_quote">
+              <p class="text_quote">
+                Я никому не позволю стать помехой на пути достижения цели всей моей жизни. 
+              </p>
+              <span class="sign">&#x2015; Гарроу. One-Punch Man</span>
+            </div>        
+          </div>
+        </div>
+      </div>
+      <div class="lower">
         <div class="left_down_case">
           <span class="list_tit_ul">Увлечения:</span>
           <ul class="list">
@@ -47,24 +60,13 @@
             <li>Чернобыль</li>
           </ol>
         </div>
-      </div>
-      <div class="right_case">
-        <div class="right_top_case">
-          <img src="images/quotes.png" class="quote" alt="Цитата">
-          <div class="quote">
-            <p class="quote">
-              Я никому не позволю стать помехой на пути достижения цели всей моей жизни. 
-            </p>
-            <span class="sign">&#x2015; Гарроу. One-Punch Man</span>
-        </div>				
-        </div>
         <div class="right_down_case">
-          <h1 class="head_name" id="my_vita">Андрей Окунев</h1>
+          <h1 class="head_name">Андрей Окунев</h1>
           <span class="line"></span>
           <p class="vita">
             Родился в деревне Красная Гора Сернурского района. Начальные классы проучился в деревне. С 5 по 9 классы обучался в Национальной президентской школе-искусств на художественном направении. После 9 класса пошел в колледж на специальность "Архитектура". После окончания колледжа поступил в ПГТУ на ПС. Почему же я решил поступить на ПС? Я подумал: "Почему бы не попробовать?"
           </p>
-          <p class="head_hobby" id="my_hobby">Мое хобби</p>
+          <span class="head_hobby" id="my_hobby">Мое хобби</span>
           <p class="hobby">
             Уже как несколько лет я забросил свое последнее хобби, которое мне грело душу и вдохновляло. Нынче я в поисках того ремесла, отличного от работы, с которым я буду идти рука об руку.
           </p>
@@ -73,43 +75,43 @@
             <span class="arrow_link">&#x2192;</span>
           </a>
         </div>
-      </div>
+      </div>  
     </div>
-    <div class="favorite_films_case" id="my_films">
-      <h2 class="favorite_films_case">Любимые фильмы</h2>
+    <div class="favorite_films_case">
+      <h2 class="favorite_films_case_head" id="my_films">Любимые фильмы</h2>
       <div class="favorite_films">
         <div class="film">
-          <p class="film">
-            <img src="images/movie/movie_one.png" alt="Побег из Шоушенка" class="film_one">
-          </p>
-          <span class="film">Побег из Шоушенка</span>
+          <div class="film_image">
+            <img src="images/movie/movie_one.png" alt="Побег из Шоушенка">
+          </div>
+          <span class="film_head">Побег из Шоушенка</span>
           <p class="film_description">
             Успешный банкир Энди Дюфрейн обвинен в убийстве собственной жены и ее любовника. Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием, царящими по обе стороны решетки. Каждый, кто попадает в эти стены, становится их рабом до конца жизни. Но Энди, вооруженный живым умом и доброй душой, отказывается мириться с приговором судьбы и начинает разрабатывать невероятно дерзкий план своего освобождения.
           </p>
         </div>
         <div class="film">
-          <p class="film">
-            <img src="images/movie/movie_two.png" alt="Наркоз" class="film_two">
-          </p>
-          <span class="film">Наркоз</span>
+          <div class="film_image">
+            <img src="images/movie/movie_two.png" alt="Наркоз">
+          </div>
+          <span class="film_head">Наркоз</span>
           <p class="film_description">
             Клай Бересфорд вынужден лечь под нож. Однако в процессе операции на сердце он неожиданно приходит в себя. Находясь в парализованном состоянии, будучи не в силах пошевелить ни рукой, ни ногой, он, тем не менее, чувствует каждое касание скальпеля к своей плоти…
           </p>
         </div>
         <div class="film">
-          <p class="film">
-            <img src="images/movie/movie_three.png" alt="Астрал" class="film_three">
-          </p>
-          <span class="film film_name">Астрал</span>
+          <div class="film_image">
+            <img src="images/movie/movie_three.png" alt="Астрал">
+          </div>
+          <span class="film_head film_name">Астрал</span>
           <p class="film_description">
             Джош и Рене переезжают со своими детьми в новый дом, но не успевают толком распаковать вещи, как начинаются странные события. Необъяснимо перемещаются предметы, в детской звучат странные звуки… Но в настоящий ужас приходят родители, когда их десятилетний сын Далтон впадает в кому. Все усилия врачей в больнице помочь мальчику безуспешны.
           </p>
         </div>
         <div class="film">
-          <p class="film">
-            <img src="images/movie/movie_four.png" alt="Гравитация" class="film_four">
-          </p>
-          <span class="film">Гравитация</span>
+          <div class="film_image">
+            <img src="images/movie/movie_four.png" alt="Гравитация">
+          </div>
+          <span class="film_head">Гравитация</span>
           <p class="film_description">
             Доктор Райан Стоун, блестящий специалист в области медицинского инжиниринга, отправляется в свою первую космическую миссию под командованием ветерана астронавтики Мэтта Ковальски, для которого этот полет — последний перед отставкой. Но во время, казалось бы, рутинной работы за бортом случается катастрофа.<br>
             Шаттл уничтожен, а Стоун и Ковальски остаются совершенно одни; они находятся в связке друг с другом, и все, что они могут, — это двигаться по орбите в абсолютно черном пространстве без всякой связи с Землей и какой-либо надежды на спасение.
@@ -117,13 +119,13 @@
         </div>
       </div>
     </div>
-    <a href="#all_films" class="button_all_films">
+    <a href="#" class="button_all_films">
       <div class="link_text">
         <span>Все фильмы</span>
       </div>
     </a>
     <div class="footer">
-      <span class="footer">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</span>
+      © 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
     </div>
   </body>
 </html>
