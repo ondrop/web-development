@@ -3,30 +3,23 @@
     {
         return isset($_GET[$name]) ?(string) $_GET[$name] : null;
     };
-    $direction = '../task4/';
+    define("DIRECTION", "../task4/");
+    define("FOLDER", "data/");
+    $direction = DIRECTION . FOLDER;
     chdir($direction);
-    if (file_exists('data')) 
+    $email = getGETParameter('email');
+    $profile = $email . '.txt';
+    if (($direction) and (file_exists($profile))) 
     {
-        $direction = $direction . 'data/';
-        chdir($direction);
-        $email = getGETParameter('email');
-        $profile = $email . '.txt';
-        if (file_exists($profile)) 
-        {
-            $handle = fopen($profile, 'r');
-            while (!feof($handle)) 
-            {	
-                $data = fgets($handle);
-                echo nl2br($data);
-            };
-            fclose($handle);
-        }
-        else
-        {
-            echo "File '$profile' does not exist";
-        }	
+        $handle = fopen($profile, 'r');
+        while (!feof($handle)) 
+        {	
+            $data = fgets($handle);
+            echo nl2br($data);
+        };
+        fclose($handle);
     }
     else
     {
-    	echo "Folder 'data' does not exist";
+    	echo "Folder 'data' or file does not exist";
     }
