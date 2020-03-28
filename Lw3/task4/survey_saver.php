@@ -7,7 +7,7 @@
     $lastName = 'Last Name: ' . getGETParameter('last_name');
     $email = getGETParameter('email');
     $age = 'Age: ' . getGETParameter('age');
-    define("FOLDER", "data/");
+    const FOLDER = 'data/';
     if (!file_exists(FOLDER)) 
     {
         mkdir(FOLDER, 0777, true);

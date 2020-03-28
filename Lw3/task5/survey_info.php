@@ -3,8 +3,8 @@
     {
         return isset($_GET[$name]) ?(string) $_GET[$name] : null;
     };
-    define("DIRECTION", "../task4/");
-    define("FOLDER", "data/");
+    const DIRECTION = '../task4/';
+    const FOLDER = 'data/';
     $direction = DIRECTION . FOLDER;
     chdir($direction);
     $email = getGETParameter('email');
