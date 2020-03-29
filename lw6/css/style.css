@@ -3,6 +3,8 @@ body
     margin: 0;
 }
 
+/*---------------- МЕНЮ --------------*/
+
 .page_header_case  /*navigation*/
 {
     position: sticky;
@@ -45,16 +47,19 @@ body
 
 .icon_vita
 {
-    margin: 17px 0 0 21px;  
+    content: url("../images/icons/about_me_icon.png");
+    margin: 17px 0 0 21px;
 }
 
 .icon_hobby
 {
-    margin: 18px 0 0 20px;  
+    content: url("../images/icons/hobby_icon.png");
+    margin: 18px 0 0 20px;
 }
 
 .icon_film
 {
+    content: url("../images/icons/video_icon.png");
     margin: 17px 0 0 18px;  
 }
 
@@ -65,6 +70,7 @@ body
     filter: brightness(0) invert(1);
 }
 
+/*---------------- ФОН КАРТИНКА --------------*/
 
 .background_img
 {
@@ -72,15 +78,32 @@ body
     z-index: -1;
 }
 
+/*---------------- БИОГРАФИЯ --------------*/
+
 .case_top
+{
+    width: 960px;
+    margin-left: 480px;
+}
+
+
+.above
+{
+    display: flex;
+    height: 240px;
+    margin-top: 160px;
+}
+
+.lower
 {
     display: flex;
 }
 
-.left_case
+.left_case_lower
 {
-    width: 810px; 
-    margin: 195px 0 0 0;
+    height: 350px;
+    width: 330px; 
+    margin-top: 0;
 }
 
 .right_case
@@ -90,43 +113,43 @@ body
 
 .left_top_case
 {
+    padding-top: 50px;
     height: 350px;
-    margin: 15px 0 0 0;
+    margin: 0;
 }
 
 .left_down_case
 {
-    margin: 49px 0 0 480px;
+    margin-top: 160px;
 }
 
 .right_top_case
 {
-    margin-top: 160px;
     width: 630px;
     height: 240px;
 }
 
-.right_top_case:hover img.quote
+.right_top_case:hover .quote
 {
-    transition: 1s;
     opacity: 1;
 }
 
 .right_down_case
 {
     width: 570px;
-    margin: -13px 0 0 60px;
+    margin: 42px 0 0 60px;
 }
+
 
 .photo_pos
 {
     border-radius: 4px;
-    float: right;
     height: 350px;
     width: 330px;
 }
 
-.list_tit_ul
+.list_tit_ul,
+.list_tit_ol
 {
     display: block;
     width: 330px;
@@ -138,15 +161,11 @@ body
 
 .list_tit_ol
 {
-    display: block;
-    width: 330px;
-    color: #45C3AA;
-    font: 600 24px/1em Open Sans, sans-serif;
-    font-stretch: normal;
-    margin: 46px 0 0 0;
+    margin-top: 46px;
 }
 
-ul
+ul,
+ol
 {
     width: 309px;
     color: #555;
@@ -157,20 +176,16 @@ ul
 
 ol
 {
-    padding: 0 0 0 20px;
-    width: 309px;
-    color: #555;
     margin-top: 15px;
-    font: 19px/1.9 Georgia, serif;
 }
 
-div.quote
+.div_quote
 {
     padding: 50px 0 0 60px; 
     height: 190px;
 }
 
-p.quote
+.text_quote
 {   
     max-height: 114px;
     margin: 25px 0 0 1px;
@@ -178,7 +193,7 @@ p.quote
     color: #FFF;
 }
 
-img.quote
+.quote
 {
     margin: 6px 0 0 3px;
     position: absolute;
@@ -192,14 +207,6 @@ img.quote
     color: #FFF;    
     margin: 15px 0 0 5px;
     font: 600 16px/1em Open Sans, sans-serif;
-}
-
-#my_vita,
-#my_hobby,
-#my_films
-{
-    padding-top: 55px;
-    background-clip: content-box;
 }
 
 .head_name
@@ -235,8 +242,10 @@ img.quote
 
 .head_hobby
 {
+    display: block;
     color: #333;
-    margin: -22px 0 0 -2px;
+    margin: -22px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
+    padding-top: 55px;
     font: 500 36px/1.7 Open Sans, sans-serif; 
 }
 
@@ -261,6 +270,7 @@ img.quote
     color: #45C3AA;
 }
 
+.link_vk:hover .link,
 .link_vk:hover .arrow_link
 {
     color: #098D71;
@@ -269,26 +279,29 @@ img.quote
 .link_vk:hover .link
 {
     border-bottom: 1px #098D71 solid;
-    color: #098D71;
 }
+
+/*---------------- ФИЛЬМЫ --------------*/
 
 .favorite_films_case_background
 {
     background: linear-gradient(to bottom, #FFF 16px , #F9F9F9 0);
 }
 
-.favorite_films_case
+.favorite_films_case,
+.favorite_films_case_head
 {
-    margin: 42px 0 55px 360px; 
+    margin: 97px 0 55px 360px; 
     width: 1200px;
     letter-spacing: 0.1px;
 }
 
-h2.favorite_films_case
+.favorite_films_case_head
 {
     color: #333;
     font: 500 36px/1em Open Sans, sans-serif;
-    margin: 0;
+    margin: -55px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
+    padding-top: 55px;
 }
 
 .favorite_films
@@ -297,7 +310,8 @@ h2.favorite_films_case
     display: flex;
 }
 
-.film
+.film,
+.film_image
 {
     margin-right: 20px;
     width: 285px;
@@ -311,7 +325,7 @@ h2.favorite_films_case
     word-spacing: 0.2px;
 }
 
-p.film
+.film_image
 {   
     background-color: #464646;
     overflow: hidden;
@@ -320,35 +334,16 @@ p.film
     border-radius: 5px;
 }
 
-.film_one
+.film_head
 {
-    margin: 12px -78px -39px -76px;
-}
-
-.film_two
-{
-    margin: -25px -97px -46px -18px;
-}
-
-.film_three
-{
-    margin: -11px -61px 65px -54px;
-}
-
-.film_four
-{
-    margin: -55px -98px -55px -17px;
-}
-
-span.film
-{
+    width: 285px;
     display: block;
     margin: 23px 0 15px -2px;
     font: 600 22px/1.5 Open Sans, sans-serif;
     letter-spacing: 0.5px;
 }
 
-span.film_name
+.film_name
 {
     margin-left: 0; 
 }
@@ -376,6 +371,23 @@ span.film_name
     font: 19px/1em Georgia, serif;
     color: #FFF;
 }
+
+/*---------------- ПОДВАЛ --------------*/
+
+.footer
+{
+    color: #555;
+    margin: 50px 0 0 0;
+    padding: 24px 0 30px 0;
+    background-color: #F5F5F5;
+    font: 500 16px/1em Georgia, serif;
+    text-align: center;
+    letter-spacing: 0.07px;
+    word-spacing: 0.1px;
+}
+
+
+/*---------------- ФОРМА --------------*/
 
 .form_case
 {
@@ -448,12 +460,12 @@ label
     margin-top: 30px; 
 }
 
-label.message
+.label_message
 {
     margin-top: 47px;
 }
 
-textarea.message
+.textarea_message
 {
     height: 124px;
     resize: none;
@@ -470,17 +482,17 @@ p > label
     font: 400 18px/1em Open Sans, sans-serif;
 }
 
-input[type="radio"]
+.radio_form
 {
     margin: 12px 0 0 0;
 }
 
-.form_country
+.form_country_head
 {
     margin-top: 31px;
 }
 
-p.form_country
+.form_country
 {
     margin-top: 10px;
 }
@@ -490,7 +502,7 @@ p.form_country
     margin-top: 47px;
 }
 
-select.forms
+.select_forms
 {
     height: 50px;
     padding-left: 16px; 
@@ -518,22 +530,4 @@ select.forms
 .button_form:hover
 {
     background-color: #098D71;
-}
-
-.footer
-{
-    color: #555;
-    margin: 50px 0 0 0;
-    background-color: #F5F5F5;
-    font: 500 16px/1em Georgia, serif;
-    text-align: center;
-    letter-spacing: 0.07px;
-    word-spacing: 0.1px;
-}
-
-span.footer
-{
-    margin: 0;
-    padding: 24px 0 30px 0;
-    display: inline-block;
 }
