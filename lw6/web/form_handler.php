@@ -7,6 +7,7 @@ $direction = '../';
 chdir($direction);
 $firstName = getPOSTParameter('first_name');
 $email = getPOSTParameter('email');
+$email = strtolower($email);
 $country = getPOSTParameter('country');
 $gender = getPOSTParameter('gender');
 $message = getPOSTParameter('message');
