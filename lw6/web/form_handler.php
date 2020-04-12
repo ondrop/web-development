@@ -20,10 +20,10 @@ if ($firstName && $email && $message)
 {
     $direction = FOLDER . $email . '.txt';
     $data = ($firstName . PHP_EOL . 
-    		$email . PHP_EOL . 
-    		$country . PHP_EOL . 
-    		$gender . PHP_EOL . 
-    		$message . PHP_EOL);
+            $email . PHP_EOL . 
+            $country . PHP_EOL . 
+            $gender . PHP_EOL . 
+            $message . PHP_EOL);
     $handle = fopen($direction, 'w+');
     fwrite($handle, $data);
     fclose($handle);
