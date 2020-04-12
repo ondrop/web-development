@@ -9,7 +9,6 @@ body
 {
     position: sticky;
     top: 0px;
-    width: 100%;
     background-color: #FFF;
     z-index: 1;
 }
@@ -25,6 +24,7 @@ body
 
 .nav
 {
+    padding: 15px 21px 0 5px;
     display: inline-block;
     text-decoration: none;
     background-color: #FFF;
@@ -37,30 +37,22 @@ body
     background-color: #45C3AA;
 }
 
-.local_link
-{
-    margin: 15px 21px 0 5px;
-    display: inline-block;
-    vertical-align: top;
-    letter-spacing: 0.05px;
-}
-
 .icon_vita
 {
     content: url("../images/icons/about_me_icon.png");
-    margin: 17px 0 0 21px;
+    margin: 2px 5px 0 16px;
 }
 
 .icon_hobby
 {
     content: url("../images/icons/hobby_icon.png");
-    margin: 18px 0 0 20px;
+    margin: 3px 5px 0 15px;
 }
 
 .icon_film
 {
     content: url("../images/icons/video_icon.png");
-    margin: 17px 0 0 18px;  
+    margin: 2px 6px 0 14px;  
 }
 
 .nav:hover .icon_vita,
@@ -83,7 +75,8 @@ body
 .case_top
 {
     width: 960px;
-    margin-left: 480px;
+    margin: 0 auto;
+    padding-left: 17px;
 }
 
 
@@ -164,8 +157,8 @@ body
     margin-top: 46px;
 }
 
-ul,
-ol
+.ul_text,
+.ol_text
 {
     width: 309px;
     color: #555;
@@ -174,7 +167,7 @@ ol
     font: 19px/1.9 Georgia, serif;
 }
 
-ol
+.ol_text
 {
     margin-top: 15px;
 }
@@ -265,13 +258,8 @@ ol
     text-decoration: none;
 }
 
-.arrow_link
-{
-    color: #45C3AA;
-}
-
 .link_vk:hover .link,
-.link_vk:hover .arrow_link
+.link_vk:hover
 {
     color: #098D71;
 }
@@ -291,7 +279,8 @@ ol
 .favorite_films_case,
 .favorite_films_case_head
 {
-    margin: 97px 0 55px 360px; 
+    margin: 97px auto 55px auto;
+    padding-left: 16px;
     width: 1200px;
     letter-spacing: 0.1px;
 }
@@ -301,7 +290,7 @@ ol
     color: #333;
     font: 500 36px/1em Open Sans, sans-serif;
     margin: -55px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
-    padding-top: 55px;
+    padding: 55px 0 0 0;
 }
 
 .favorite_films
@@ -348,15 +337,23 @@ ol
     margin-left: 0; 
 }
 
+.button_case
+{
+    padding: 0 4px 60px 0; 
+}
+
 .button_all_films
 {
-    display: inline-block;
+    display: block;
     text-decoration: none;
-    margin: 0 0 60px 840px;
+    margin: 0 auto; 
     background-color: #45C3AA;
     width: 220px;
     height: 50px;
     border-radius: 5px;
+    text-align: center;
+    font: 19px/48px Georgia, serif;
+    color: #FFF;
 }
 
 .button_all_films:hover
@@ -391,34 +388,20 @@ ol
 
 .form_case
 {
-    margin-top: 48px;
+    width: 700px;
+    margin: 48px auto 0 auto;
 }
 
 .form_head
 {
     height: auto;
+    width: auto;
 }
 
 .form_body
 {
-    margin: 77px 0 0 689px;
+    margin: 77px 0 0 0;
     font: 400 20px/1em Open Sans, sans-serif;
-}
-
-.left_line,
-.right_line
-{
-    display: inline-block;
-    margin: 0 23px 12px 604px;
-    width: 200px;
-    height: 1px;
-    background: #C4C4C4;
-}
-
-
-.right_line
-{
-    margin-left: 19px;
 }
 
 
@@ -426,35 +409,64 @@ ol
 {
     text-transform: uppercase;
     display: inline-block;
+    margin: 0;
     font: 300 36px/1em Open Sans, sans-serif; 
 }
 
-.forms
+.form_header:before,
+.form_header:after
+{
+    display: inline-block;
+    margin: 0 27px 12px 2px;
+    width: 200px;
+    content: '';
+    top: 50%;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+
+.form_header:after
+{
+    margin-left: 23px;
+    margin-right: 0;
+}
+
+
+.form
+{
+    width: 540px;
+    margin: 0 auto;
+    padding-left: 16px;
+}
+
+.for_input_tag
 {
     padding: 10px 8px 12px 18px;
+    margin-top: 9px; 
     width: 510px;
     font: 400 18px/1em Open Sans, sans-serif;
     border-radius: 3px;
     border: 2px solid #A6A6A6;
 }
 
-.forms:focus
+.for_input_tag:focus
+{
+    outline: none;
+    border-color: #15A98C;
+}
+
+.for_input_tag:hover
 {
     border-color: #15A98C;
 }
 
-.required_form:after
+.label_star:after
 {
     color: #EE0707;
     content: " *"
 }
 
-form > p
-{
-    margin: 9px 0 0 1px;
-}
-
-label
+.for_label_tag
 {
     display: block;
     margin-top: 30px; 
@@ -474,7 +486,7 @@ label
 }
 
 
-p > label
+.label_radio_gender
 {
     vertical-align: top;
     margin: 8px 36px 0 8px;
@@ -482,27 +494,22 @@ p > label
     font: 400 18px/1em Open Sans, sans-serif;
 }
 
-.radio_form
+.input_radio_gender
 {
     margin: 12px 0 0 0;
 }
 
-.form_country_head
+.country_head
 {
     margin-top: 31px;
 }
 
-.form_country
+.label_gender
 {
-    margin-top: 10px;
+    margin: 47px 0 10px 0;
 }
 
-.form_gender
-{
-    margin-top: 47px;
-}
-
-.select_forms
+.for_select_tag
 {
     height: 50px;
     padding-left: 16px; 
@@ -513,8 +520,9 @@ p > label
     width: 540px;
 }
 
-.button_form
+.button_send
 {
+    display: block;
     margin: 47px 0 0 1px;
     width: 220px;
     height: 50px;
@@ -527,7 +535,7 @@ p > label
     cursor: pointer;
 }
 
-.button_form:hover
+.button_send:hover
 {
     background-color: #098D71;
 }

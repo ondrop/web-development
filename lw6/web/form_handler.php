@@ -10,14 +10,19 @@ $email = getPOSTParameter('email');
 $country = getPOSTParameter('country');
 $gender = getPOSTParameter('gender');
 $message = getPOSTParameter('message');
-if (!file_exists('data')) 
+const FOLDER = 'data/';
+if (!file_exists(FOLDER)) 
 {
-    mkdir('data', 0777, true);
+    mkdir(FOLDER, 0777, true);
 }
-if (($firstName) and ($email) and ($message))
+if ($firstName && $email && $message)
 {
-    $direction = 'data/' . $email . '.txt';
-    $data = ($firstName . PHP_EOL . $email . PHP_EOL . $country . PHP_EOL . $gender . PHP_EOL . $message . PHP_EOL);
+    $direction = FOLDER . $email . '.txt';
+    $data = ($firstName . PHP_EOL . 
+    		$email . PHP_EOL . 
+    		$country . PHP_EOL . 
+    		$gender . PHP_EOL . 
+    		$message . PHP_EOL);
     $handle = fopen($direction, 'w+');
     fwrite($handle, $data);
     fclose($handle);
