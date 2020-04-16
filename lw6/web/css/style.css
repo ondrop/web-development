@@ -15,7 +15,8 @@ body
 
 .page_header
 {
-    margin: 0 460px;
+    margin: 0 auto;
+    width: 943px;
     padding: 0 20px;
     font: 300 19px/1em Georgia, serif;
     display: flex;
@@ -64,10 +65,19 @@ body
 
 /*---------------- ФОН КАРТИНКА --------------*/
 
-.background_img
+.background_img_case
 {
     position: absolute;
     z-index: -1;
+    width: 100%;
+}
+
+.background_img
+{
+    z-index: -1;
+    width: 1903px;
+    margin: 0 auto;
+    display: block;
 }
 
 /*---------------- БИОГРАФИЯ --------------*/
