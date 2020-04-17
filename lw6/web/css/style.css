@@ -133,8 +133,9 @@ body
 }
 
 .right_top_case:hover .quote
-{
+{   
     opacity: 1;
+    transition: .25s opacity;
 }
 
 .right_down_case
@@ -201,6 +202,7 @@ body
     margin: 6px 0 0 3px;
     position: absolute;
     opacity: 0;
+    transition: .25s opacity;
 }
 
 .sign
