@@ -30,6 +30,9 @@ body
     text-decoration: none;
     background-color: #FFF;
     color: #333;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-property: background-color, color;
 }
 
 .nav:hover
@@ -53,7 +56,7 @@ body
 .icon_film
 {
     content: url("../images/icons/video_icon.png");
-    margin: 2px 6px 0 14px;  
+    margin: 2px 6px 0 14px; 
 }
 
 .nav:hover .icon_vita,
@@ -152,8 +155,7 @@ body
     width: 330px;
 }
 
-.list_tit_ul,
-.list_tit_ol
+.list_title
 {
     display: block;
     width: 330px;
@@ -163,13 +165,12 @@ body
     margin: 49px 0 0 0; 
 }
 
-.list_tit_ol
+.list_title_ol
 {
     margin-top: 46px;
 }
 
-.ul_text,
-.ol_text
+.list_text
 {
     width: 309px;
     color: #555;
@@ -178,7 +179,7 @@ body
     font: 19px/1.9 Georgia, serif;
 }
 
-.ol_text
+.ol_list_text
 {
     margin-top: 15px;
 }
@@ -240,14 +241,11 @@ body
 
 .hobby
 {
-    color: #555;
-    font: 500 19px/1.7 Georgia, serif;
     margin: 5px 0 0 0;
 }
 
 .head_hobby
 {
-    display: block;
     color: #333;
     margin: -22px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
     padding-top: 55px;
@@ -260,6 +258,7 @@ body
     font: 500 19px/1.7 Georgia, serif;
     text-decoration: none;
     border-bottom: 1px #45C3AA solid;
+    transition: color .3s linear;
 }
 
 .link_vk
@@ -366,11 +365,13 @@ body
     text-align: center;
     font: 19px/48px Georgia, serif;
     color: #FFF;
+    transition: background-color .3s linear;
 }
 
 .button_all_films:hover
 {
     background-color: #098D71;
+    transition: all .3s linear;
 }
 
 .link_text
@@ -550,4 +551,9 @@ body
 .button_send:hover
 {
     background-color: #098D71;
+}
+
+.transition
+{
+    transition: all .3s linear;
 }
