@@ -30,9 +30,7 @@ body
     text-decoration: none;
     background-color: #FFF;
     color: #333;
-    transition-duration: .3s;
-    transition-timing-function: linear;
-    transition-property: background-color, color;
+    transition: background-color .3s ease;
 }
 
 .nav:hover
@@ -258,7 +256,7 @@ body
     font: 500 19px/1.7 Georgia, serif;
     text-decoration: none;
     border-bottom: 1px #45C3AA solid;
-    transition: color .3s linear;
+    transition: color .3s ease;
 }
 
 .link_vk
@@ -365,13 +363,13 @@ body
     text-align: center;
     font: 19px/48px Georgia, serif;
     color: #FFF;
-    transition: background-color .3s linear;
+    transition: background-color .3s ease;
 }
 
 .button_all_films:hover
 {
     background-color: #098D71;
-    transition: all .3s linear;
+    transition: all .3s ease;
 }
 
 .link_text
@@ -555,5 +553,5 @@ body
 
 .transition
 {
-    transition: all .3s linear;
+    transition: all .3s ease;
 }
