@@ -5,7 +5,6 @@ function isPrimeNumber(n) {
   let isPrime = false;
   let isArray = Array.isArray(n);
   let isNumberArray = false;
-  let isNumber = false;
   let arrData = [];
   let arrLength;
 
@@ -18,12 +17,12 @@ function isPrimeNumber(n) {
   if (isNumberArray) {
     for (j = 0; j < arrLength; j++) { 
       n = arrData.shift(); 
-      isPrimeInt(n);
-      outputResult(n);
+      isPrime = isPrimeInt(n, isPrime);
+      outputResult(n, isPrime);
     }     
   } else if (isInteger(n)) {
-    isPrimeInt(n);
-    outputResult(n);
+    isPrime = isPrimeInt(n, isPrime);
+    outputResult(n, isPrime);
   } else {
     console.log('Ошибка: неверно введены данные');
   }
@@ -33,7 +32,7 @@ function isInteger(elem) {
   return((typeof elem) == 'number');
 }
 
-function isPrimeInt(n) {
+function isPrimeInt(n, isPrime) {
   isPrime = true;
 
   for (let i = 2; ((i < n) && (isPrime)); i++) {
@@ -41,9 +40,12 @@ function isPrimeInt(n) {
       isPrime = false;
     }
   }
+
+  return isPrime;
 } 
 
-function outputResult(n) { 
+function outputResult(n, isPrime) { 
+
   if (isPrime) {
     console.log('Результат: ', n, 'простое число');
   } else {
