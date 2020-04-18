@@ -18,7 +18,7 @@ const stepFilm = (sliderCaseWidth / (itemWidth + 20)) * sliderFilms.length * ste
 const minIndex = 0;
 const maxIndex = sliderFilms.length - 1; // sliderFilms.length это количество фильмов
 
-let rightItemPos = maxIndex;
+let rightItemPos = maxIndex - 2;
 let leftItemPos = sliderFilms.length;
 // показывает нажимали ли на стрелки
 let buttonRightPush = false;
