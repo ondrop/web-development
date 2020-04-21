@@ -544,6 +544,7 @@ body
     border-style: none;
     padding: 0 2px 4px 0;
     cursor: pointer;
+    transition: background-color .3s ease;
 }
 
 .button_send:hover

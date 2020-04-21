@@ -30,6 +30,7 @@ body
     text-decoration: none;
     background-color: #FFF;
     color: #333;
+    transition: background-color .3s ease;
 }
 
 .nav:hover
@@ -260,6 +261,7 @@ body
     font: 500 19px/1.7 Georgia, serif;
     text-decoration: none;
     border-bottom: 1px #45C3AA solid;
+    transition: color .3s ease;
 }
 
 .link_vk
@@ -368,11 +370,13 @@ body
     text-align: center;
     font: 19px/48px Georgia, serif;
     color: #FFF;
+    transition: background-color .3s ease;
 }
 
 .button_all_films:hover
 {
     background-color: #098D71;
+    transition: all .3s ease;
 }
 
 .link_text
@@ -594,11 +598,13 @@ body
     margin: 8px 36px 0 8px;
     display: inline-block;
     font: 400 18px/1em Open Sans, sans-serif;
+    cursor: pointer;
 }
 
 .input_radio_gender
 {
     margin: 12px 0 0 0;
+    cursor: pointer;
 }
 
 .country_head
@@ -635,9 +641,15 @@ body
     border-style: none;
     padding: 0 2px 4px 0;
     cursor: pointer;
+    transition: background-color .3s ease;
 }
 
 .button_send:hover
 {
     background-color: #098D71;
+}
+
+.transition
+{
+    transition: all .3s ease;
 }

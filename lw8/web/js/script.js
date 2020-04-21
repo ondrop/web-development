@@ -1,29 +1,30 @@
-// получаем в sliderCase блок с фильмами
-let sliderCase = document.getElementsByClassName('favorite_films');
-sliderCase = sliderCase[0];
+// получаем в blockForFilms блок с фильмами
+let blockForFilms = document.getElementsByClassName('favorite_films');
+blockForFilms = blockForFilms[0];
 
 //получаем его ширину
-let sliderCaseWidth = parseFloat(getComputedStyle(sliderCase).width);
-let transform = 0;
-
+let blockForFilmsWidth = parseFloat(getComputedStyle(blockForFilms).width);
 //получаем все элементы с классом film
-let sliderFilms = document.getElementsByClassName('film');
+let arrayOfFilms = document.getElementsByClassName('film');
 //получаем ширину элемента с классом фильм
-let itemWidth = parseFloat(getComputedStyle(sliderFilms[0]).width);
+let filmWidth = parseFloat(getComputedStyle(arrayOfFilms[0]).width);
 //подсчет ширины смещения для кэйса с фильмами и фильмов 
-const stepSlider = (itemWidth + 20) / sliderCaseWidth * 100;
-const stepFilm = (sliderCaseWidth / (itemWidth + 20)) * sliderFilms.length * stepSlider;
+const widthBetweenFilms = 20;
+const stepSlider = (filmWidth + widthBetweenFilms) / blockForFilmsWidth * 100;
+const stepFilm = (blockForFilmsWidth / (filmWidth + widthBetweenFilms)) * arrayOfFilms.length * stepSlider;
 
 // мин и макс индексы в массиве
 const minIndex = 0;
-const maxIndex = sliderFilms.length - 1; // sliderFilms.length это количество фильмов
+const maxIndex = arrayOfFilms.length - 1; // arrayOfFilms.length это количество фильмов
+const minusIndex = -1;
 
 let rightItemPos = maxIndex - 2;
-let leftItemPos = sliderFilms.length;
+let leftItemPos = arrayOfFilms.length;
 // показывает нажимали ли на стрелки
 let buttonRightPush = false;
 let buttonLeftPush = false;
 
+let transform = 0;
 //перемещение фильма на это число
 let transformValue = 0;
 
@@ -49,32 +50,32 @@ function rightMove() {
             transformValue += stepFilm;
             
         }
-
-        //если индекс фильма находящегося справа стал отрицательным 
-        if (rightItemPos < minIndex) {
-            rightItemPos = maxIndex;
-        }
+ 
+        changePos(rightItemPos, minusIndex, maxIndex);
     }
 
     //шаг перемещения слайдера
     transform -= stepSlider;
 
-    if (rightItemPos == sliderFilms.length) {
+    if (rightItemPos == arrayOfFilms.length) {
         rightItemPos = minIndex;
         //шаг перемещения фильма
         transformValue += stepFilm;
     }
 
     //заменяем блоку перемещение по оси Х
-    sliderCase.style.transform = 'translateX(' + transform + '%)';  
+    blockFilmMove(blockForFilms, transform);
+    //blockForFilms.style.transform = 'translateX(' + transform + '%)';  
 
     if (rightItemPos <= maxIndex) {
         //двигаем фильм
-        sliderFilms[rightItemPos].style.transform = 'translateX(' + transformValue + '%)';
+        filmMove(rightItemPos, transformValue)
+        //arrayOfFilms[rightItemPos].style.transform = 'translateX(' + transformValue + '%)';
     }
         
     rightItemPos++;
 }
+
 
 function leftMove() {
     buttonLeftPush = true;
@@ -83,13 +84,11 @@ function leftMove() {
         leftItemPos = rightItemPos++;
         buttonRightPush = false;
 
-        if (leftItemPos != sliderFilms.length) {
+        if (leftItemPos != arrayOfFilms.length) {
             transformValue -= stepFilm;
         }
 
-        if (leftItemPos == sliderFilms.length) {
-            leftItemPos = minIndex;
-        }
+        changePos(leftItemPos, arrayOfFilms.length, minIndex);
     }
 
     transform += stepSlider;
@@ -99,12 +98,28 @@ function leftMove() {
         transformValue -= stepFilm;
     }
 
-    sliderCase.style.transform = 'translateX(' + transform + '%)';  
+    blockFilmMove(blockForFilms, transform);
+    //blockForFilms.style.transform = 'translateX(' + transform + '%)';  
 
-    if (leftItemPos < minIndex) {
+    if (leftItemPos == minusIndex) {
         leftItemPos = maxIndex;
         transformValue -= stepFilm;
     }
 
-    sliderFilms[leftItemPos].style.transform = 'translateX(' + transformValue + '%)';
+    filmMove(leftItemPos, transformValue);
+    //arrayOfFilms[leftItemPos].style.transform = 'translateX(' + transformValue + '%)';
+}
+
+function changePos(rightItemPos, minusIndex, maxIndex) {
+    if (rightItemPos == minusIndex) {
+        rightItemPos = maxIndex;
+    }
+}
+
+function blockFilmMove(blockForFilms, transform) {
+    blockForFilms.style.transform = 'translateX(' + transform + '%)';   
+}
+
+function filmMove(leftItemPos, transformValue) {
+    arrayOfFilms[leftItemPos].style.transform = 'translateX(' + transformValue + '%)';
 }
