@@ -10,10 +10,12 @@ $gender = $data['gender'];
 $message = $data['message'];
 
 $checkName = preg_match("/[a-zA-Zа-ЯА-Я]/", $firstName);
-$checkName ? $firstName = 'correct' : $firstName = 'error';
+const CORRECT = 'correct';
+const ERROR = 'error';
+$checkName ? $firstName = CORRECT : $firstName = ERROR;
 $checkEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
-$checkEmail ? $email = 'correct' : $email = 'error';
-$message ? $message = 'correct' : $message = 'error';
+$checkEmail ? $email = CORRECT : $email = ERROR;
+$message ? $message = CORRECT : $message = ERROR;
 
 $data = array(
     'first_name' => $firstName,
