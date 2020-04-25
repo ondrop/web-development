@@ -393,6 +393,7 @@ body
 {
     z-index: 1;
     transition: background-color .3s ease;
+
 }
 
 .film
@@ -629,10 +630,15 @@ body
     width: 540px;
 }
 
+.send_and_check
+{
+    display: flex;
+    margin: 47px 0 0 0;
+}
+
 .button_send
 {
     display: block;
-    margin: 47px 0 0 1px;
     width: 220px;
     height: 50px;
     border-radius: 5px;
@@ -650,7 +656,40 @@ body
     background-color: #098D71;
 }
 
+.check_mark
+{
+    opacity: 0;
+    display: block;
+    width: 27px;
+    height: 28px;
+    margin: 11px 0 0 31px;
+    content: url("../images/icons/check_mark.png");
+}
+
+.state_check_message
+{
+    opacity: 0;
+    display: block;
+    margin: 9px 0 0 14px;
+    width: 138px;
+    height: 32px;
+    font: 400 14px/17px Roboto, sans-serif;
+    color: #2E2B2B;   
+}
+
 .transition
 {
     transition: all .3s ease;
+}
+
+.border_color_error,
+.border_color_error:hover,
+.border_color_error:focus
+{
+    border-color: #F00;
+}
+
+.visibility_message
+{
+    opacity: 1;
 }
