@@ -24,9 +24,9 @@ let leftItemPos = arrayOfFilms.length;
 let buttonRightPush = false;
 let buttonLeftPush = false;
 
-let transform = 0;
+let transformForSlider = 0;
 //перемещение фильма на это число
-let transformValue = 0;
+let transformForFilm = 0;
 
 // получение кнопок
 let sliderControl = document.getElementsByClassName('slider_control'); 
@@ -47,7 +47,7 @@ function rightMove() {
 
         // если индекс фильма находящегося слева не равно мин индексу
         if (leftItemPos != minIndex) {
-            transformValue += stepFilm;
+            transformForFilm += stepFilm;
             
         }
  
@@ -55,22 +55,20 @@ function rightMove() {
     }
 
     //шаг перемещения слайдера
-    transform -= stepSlider;
+    transformForSlider -= stepSlider;
 
     if (rightItemPos == arrayOfFilms.length) {
         rightItemPos = minIndex;
         //шаг перемещения фильма
-        transformValue += stepFilm;
+        transformForFilm += stepFilm;
     }
 
     //заменяем блоку перемещение по оси Х
-    blockFilmMove(blockForFilms, transform);
-    //blockForFilms.style.transform = 'translateX(' + transform + '%)';  
+    blockMove(blockForFilms, transformForSlider); 
 
     if (rightItemPos <= maxIndex) {
         //двигаем фильм
-        filmMove(rightItemPos, transformValue)
-        //arrayOfFilms[rightItemPos].style.transform = 'translateX(' + transformValue + '%)';
+        blockMove(arrayOfFilms[rightItemPos], transformForFilm);
     }
         
     rightItemPos++;
@@ -85,29 +83,27 @@ function leftMove() {
         buttonRightPush = false;
 
         if (leftItemPos != arrayOfFilms.length) {
-            transformValue -= stepFilm;
+            transformForFilm -= stepFilm;
         }
 
         changePos(leftItemPos, arrayOfFilms.length, minIndex);
     }
 
-    transform += stepSlider;
+    transformForSlider += stepSlider;
     leftItemPos--;
 
     if (leftItemPos == maxIndex) {
-        transformValue -= stepFilm;
+        transformForFilm -= stepFilm;
     }
 
-    blockFilmMove(blockForFilms, transform);
-    //blockForFilms.style.transform = 'translateX(' + transform + '%)';  
+    blockMove(blockForFilms, transformForSlider); 
 
     if (leftItemPos == minusIndex) {
         leftItemPos = maxIndex;
-        transformValue -= stepFilm;
+        transformForFilm -= stepFilm;
     }
 
-    filmMove(leftItemPos, transformValue);
-    //arrayOfFilms[leftItemPos].style.transform = 'translateX(' + transformValue + '%)';
+    blockMove(arrayOfFilms[leftItemPos], transformForFilm);
 }
 
 function changePos(rightItemPos, minusIndex, maxIndex) {
@@ -116,10 +112,6 @@ function changePos(rightItemPos, minusIndex, maxIndex) {
     }
 }
 
-function blockFilmMove(blockForFilms, transform) {
-    blockForFilms.style.transform = 'translateX(' + transform + '%)';   
-}
-
-function filmMove(leftItemPos, transformValue) {
-    arrayOfFilms[leftItemPos].style.transform = 'translateX(' + transformValue + '%)';
+function blockMove(blockForFilms, transformForSlider) {
+    blockForFilms.style.transform = 'translateX(' + transformForSlider + '%)';   
 }

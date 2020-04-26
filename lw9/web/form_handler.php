@@ -17,9 +17,9 @@ $checkEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
 $checkEmail ? $email = CORRECT : $email = ERROR;
 $message ? $message = CORRECT : $message = ERROR;
 
-$data = array(
+$data = [
     'first_name' => $firstName,
     'email' => $email,
     'message' => $message 
-);
+];
 echo(json_encode($data));

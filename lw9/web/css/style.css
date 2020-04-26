@@ -656,9 +656,14 @@ body
     background-color: #098D71;
 }
 
+.succesfull_sending
+{
+    display: flex;
+    opacity: 0;
+}
+
 .check_mark
 {
-    opacity: 0;
     display: block;
     width: 27px;
     height: 28px;
@@ -668,7 +673,6 @@ body
 
 .state_check_message
 {
-    opacity: 0;
     display: block;
     margin: 9px 0 0 14px;
     width: 138px;
@@ -683,8 +687,7 @@ body
 }
 
 .border_color_error,
-.border_color_error:hover,
-.border_color_error:focus
+.border_color_error:hover
 {
     border-color: #F00;
 }

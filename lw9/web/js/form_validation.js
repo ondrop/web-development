@@ -1,26 +1,23 @@
 let button = document.getElementsByClassName('button_send');
 button = button[0];
-button.onclick = () => {sendForm(); return false;}
+button.onclick = sendForm;
+
+let firstName = document.getElementById('first_name'),
+    email = document.getElementById('email'),
+    message = document.getElementById('message');
+deleteRedBorderOnClick(firstName);
+deleteRedBorderOnClick(email);
+deleteRedBorderOnClick(message);
+
+function deleteRedBorderOnClick(firstName) {
+    const redBorderClass = 'border_color_error';
+    firstName.onclick = () => firstName.classList.remove(redBorderClass);
+}
 
 async function sendForm() {
-    let first_name = document.getElementById('first_name').value;
-    let email = document.getElementById('email').value;
-    let country = document.getElementById('country').value;
-    let message = document.getElementById('message').value;
-    let gender = document.getElementsByName('gender');
-    for (let i = 0; i < gender.length; i++) {
-        if (gender[i].checked) {
-            gender = gender[i].value;
-        }
-    }
-    
-    let data = {
-        first_name: first_name,
-        email: email,
-        country: country,
-        gender: gender,
-        message: message
-    }
+    event.preventDefault();
+    let data = receivingData();
+
     const link = 'web/form_handler.php';
     let promise = await fetch(link, {
         method: 'POST',
@@ -33,42 +30,63 @@ async function sendForm() {
     .then((data) => {
         arrayData = data;
     });
-
-    let commonState = false,
-        stateName = false,
-        stateEmail = false,
-        stateMessage = false;
-    stateName = valueIsCorrect(arrayData, 'first_name');
-    stateEmail = valueIsCorrect(arrayData, 'email');
-    stateMessage = valueIsCorrect(arrayData, 'message');
-
-    if (stateName && stateEmail && stateMessage) {
-        commonState = true;
-    }
-
-    visibilityMessage(commonState);
+    
+    let errorCounter = 0;
+    errorCounter =  errorChecking(arrayData, errorCounter);
+    visibilityMessage(errorCounter);
 }
 
-function visibilityMessage(commonState) {
-    const successfulSending = document.getElementsByClassName('success_send');
-    const className = 'visibility_message';
-
-    for (let i = 0; i < successfulSending.length; i++) {
-        successfulSending[i].classList.remove(className);
-
-        if (commonState) {
-            successfulSending[i].classList.add(className);
+function receivingData() {
+    let firstName = document.getElementById('first_name').value;
+    let email = document.getElementById('email').value;
+    let country = document.getElementById('country').value;
+    let message = document.getElementById('message').value;
+    let gender = document.getElementsByName('gender');
+    
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            gender = gender[i].value;
         }
     }
+    
+    data = {
+        first_name: firstName,
+        email: email,
+        country: country,
+        gender: gender,
+        message: message
+    }
+    return data;
 }
 
-function valueIsCorrect(arrayData, itemName) {
-    const className = 'border_color_error';
+function errorChecking(arrayData, errorCounter) {
+    for (let key in arrayData) {
+        changeBorderColor(arrayData, key);
+        if (arrayData[key] == 'error') {
+            errorCounter++;   
+        }
+    }
+
+    return errorCounter;
+}
+
+function visibilityMessage(errorCounter) {
+    const successfullSending = document.getElementsByClassName('succesfull_sending');
+    const className = 'visibility_message';
+    successfullSending[0].classList.remove(className);
+
+    if (errorCounter ==  0) {
+        successfullSending[0].classList.add(className);
+    }
+}
+
+function changeBorderColor(arrayData, item) {  
+    const redBorderClass = 'border_color_error';  
     
-    if (arrayData[itemName] == 'error') {
-        document.getElementById(itemName).classList.add(className);
+    if (arrayData[item] == 'error') {
+        document.getElementById(item).classList.add(redBorderClass);
     } else {
-        document.getElementById(itemName).classList.remove(className);
+        document.getElementById(item).classList.remove(redBorderClass);
         return true;
     }
 }
