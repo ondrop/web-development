@@ -52,7 +52,7 @@ function rightMove() {
     blockMove(slider, transformForSlider); 
 
     if (rightItemPos <= maxIndex) {
-        setTimeout(blockMove, 1000, 'arrayOfFilms[rightItemPos]', 'transformForFilm');
+        setTimeout(blockMove, 1000, arrayOfFilms[rightItemPos], transformForFilm);
     }
         
     rightItemPos++;
