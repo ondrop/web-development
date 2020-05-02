@@ -9,9 +9,9 @@ deleteRedBorderOnClick(firstName);
 deleteRedBorderOnClick(email);
 deleteRedBorderOnClick(message);
 
-function deleteRedBorderOnClick(firstName) {
+function deleteRedBorderOnClick(field) {
     const redBorderClass = 'border_color_error';
-    firstName.onclick = () => firstName.classList.remove(redBorderClass);
+    field.onclick = () => field.classList.remove(redBorderClass);
 }
 
 async function sendForm() {
@@ -32,7 +32,7 @@ async function sendForm() {
     });
     
     let errorCounter = 0;
-    errorCounter =  errorChecking(arrayData, errorCounter);
+    errorCounter =  changeBorderColor(arrayData, errorCounter);
     visibilityMessage(errorCounter);
 }
 
@@ -59,11 +59,15 @@ function receivingData() {
     return data;
 }
 
-function errorChecking(arrayData, errorCounter) {
+function changeBorderColor(arrayData, errorCounter) {
+    const redBorderClass = 'border_color_error'; 
+
     for (let key in arrayData) {
-        changeBorderColor(arrayData, key);
         if (arrayData[key] == 'error') {
             errorCounter++;   
+            document.getElementById(key).classList.add(redBorderClass);
+        } else {
+            document.getElementById(key).classList.remove(redBorderClass);
         }
     }
 
@@ -77,16 +81,5 @@ function visibilityMessage(errorCounter) {
 
     if (errorCounter ==  0) {
         successfullSending[0].classList.add(className);
-    }
-}
-
-function changeBorderColor(arrayData, item) {  
-    const redBorderClass = 'border_color_error';  
-    
-    if (arrayData[item] == 'error') {
-        document.getElementById(item).classList.add(redBorderClass);
-    } else {
-        document.getElementById(item).classList.remove(redBorderClass);
-        return true;
     }
 }
