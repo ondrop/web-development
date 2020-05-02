@@ -10,7 +10,7 @@ const stepSlider = (filmWidth + widthBetweenFilms) / sliderWidth * 100;
 const stepFilm = (sliderWidth / (filmWidth + widthBetweenFilms)) * arrayOfFilms.length * stepSlider;
 
 const minIndex = 0;
-const maxIndex = arrayOfFilms.length - 1; // arrayOfFilms.length это количество фильмов
+const maxIndex = arrayOfFilms.length - 1;
 const minusIndex = -1;
 
 let rightItemPos = maxIndex;
