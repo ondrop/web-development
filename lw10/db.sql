@@ -1,21 +1,25 @@
 CREATE DATABASE university;
-USE university;
+USE 
+    university;
 CREATE TABLE faculty (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255) NOT NULL
+    id      INT AUTO_INCREMENT  NOT NULL,
+    name    VARCHAR(255)        NOT NULL,
+    PRIMARY KEY (id)
 );
 CREATE TABLE groups (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    faculty_id INT NOT NULL,
+    id          INT AUTO_INCREMENT  NOT NULL,
+    name        VARCHAR(255)        NOT NULL,
+    faculty_id  INT                 NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY (faculty_id) REFERENCES faculty(id)
 );
 CREATE TABLE students (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    age INT NOT NULL,
-    group_id INT NOT NULL,
+    id          INT AUTO_INCREMENT  NOT NULL,
+    first_name  VARCHAR(255)        NOT NULL,
+    last_name   VARCHAR(255)        NOT NULL,
+    age         INT                 NOT NULL,
+    group_id    INT                 NOT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY (group_id) REFERENCES groups(id) 
 );
 INSERT INTO faculty(name)
