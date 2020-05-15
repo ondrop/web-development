@@ -3,9 +3,9 @@
 require_once '../src/common.inc.php';
 if (getRequestMethod() == 'POST')
 {
-	feedbacksListPage();	
+    feedbacksListPage();    
 }
 else
 {
-	renderTemplate('feedbacks.tpl.php');
-}	
+    renderTemplate('feedbacks.tpl.php');
+}   

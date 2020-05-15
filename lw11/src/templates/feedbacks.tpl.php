@@ -21,6 +21,7 @@
     <?php if (isset($args['answer'])): ?>
       <div class="feedback_answer">
         <div class="response_names">
+          <span class="for_label_tag">Id:</span>
           <span class="for_label_tag">Имя:</span>
           <span class="for_label_tag">Email:</span>
           <span class="for_label_tag">Страна:</span>

@@ -132,13 +132,13 @@
         <form action="index.php" method="post" class="form">
           <label class="label_star for_label_tag" for="first_name">Ваше имя</label>
           <?php if (isset($args['first_name_error_msg'])): ?>
-		        <p class="error_msg"><?php echo $args['first_name_error_msg']; ?></p>
-		      <?php endif; ?>
+            <p class="error_msg"><?php echo $args['first_name_error_msg']; ?></p>
+          <?php endif; ?>
           <input type="text" name="first_name" value="<?php echo $args['first_name'] ?? ''; ?>" required class="for_input_tag" id="first_name">
           <label class="label_star for_label_tag" for="email">Ваш email</label>
           <?php if (isset($args['email_error_msg'])): ?>
-		        <p class="error_msg"><?php echo $args['email_error_msg']; ?></p>
-		      <?php endif; ?>
+            <p class="error_msg"><?php echo $args['email_error_msg']; ?></p>
+          <?php endif; ?>
           <input type="email" name="email" value="<?php echo $args['email'] ?? ''; ?>" required class="for_input_tag" id="email">
           <label class="country_head for_label_tag" for="country">Откуда вы?</label>
             <select name="country" class="for_select_tag for_input_tag" id="country">
