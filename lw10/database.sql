@@ -1,33 +1,32 @@
 CREATE DATABASE university;
-USE 
-    university;
+USE university;
 CREATE TABLE faculty (
-    id      INT AUTO_INCREMENT  NOT NULL,
-    name    VARCHAR(255)        NOT NULL,
-    PRIMARY KEY (id)
+    faculty_id      INT AUTO_INCREMENT  NOT NULL,
+    faculty_name    VARCHAR(255)        NOT NULL,
+    PRIMARY KEY (faculty_id)
 );
-CREATE TABLE groups (
-    id          INT AUTO_INCREMENT  NOT NULL,
-    name        VARCHAR(255)        NOT NULL,
+CREATE TABLE faculty_group (
+    group_id    INT AUTO_INCREMENT  NOT NULL,
+    group_name  VARCHAR(255)        NOT NULL,
     faculty_id  INT                 NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (faculty_id) REFERENCES faculty(id)
+    PRIMARY KEY (group_id),
+    FOREIGN KEY (faculty_id) REFERENCES faculty(faculty_id)
 );
-CREATE TABLE students (
-    id          INT AUTO_INCREMENT  NOT NULL,
+CREATE TABLE student (
+    student_id  INT AUTO_INCREMENT  NOT NULL,
     first_name  VARCHAR(255)        NOT NULL,
     last_name   VARCHAR(255)        NOT NULL,
     age         INT                 NOT NULL,
     group_id    INT                 NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (group_id) REFERENCES groups(id) 
+    PRIMARY KEY (student_id),
+    FOREIGN KEY (group_id) REFERENCES faculty_group(group_id) 
 );
-INSERT INTO faculty(name)
+INSERT INTO faculty(faculty_name)
 VALUES 
     ('Faculty of Information Technologies and Computer Engineering'),
     ('Faculty of Radio Engineering'),
     ('Faculty of Social Studies');
-INSERT INTO groups(name, faculty_id)
+INSERT INTO faculty_group(group_name, faculty_id)
 VALUES
     ('PS-11', 1), 
     ('PS-12', 1),
@@ -38,7 +37,7 @@ VALUES
     ('Social Work', 3),
     ('Service', 3),
     ('Tourism', 3);  
-INSERT INTO students(first_name, last_name, age, group_id)
+INSERT INTO student(first_name, last_name, age, group_id)
 VALUES 
     ('Ivan', 'Ivanov', 19, 1),
     ('Andrey', 'Okunev', 19, 1),
@@ -88,37 +87,34 @@ VALUES
 SELECT 
     * 
 FROM 
-    students
+    student
 WHERE 
     age = 19; 
 
 SELECT 
-    * 
+    s.* 
 FROM 
-    students
+    student s
+    JOIN faculty_group g ON g.group_id = s.group_id
 WHERE
-    group_id = 1;
+    g.group_name = 'PS-11';
 
 SELECT
-    students.* 
+    s.* 
 FROM
-    students
-JOIN 
-    groups ON students.group_id = groups.id
-JOIN 
-    faculty ON groups.faculty_id = faculty.id
+    student s
+    JOIN faculty_group g ON s.group_id = g.group_id
+    JOIN faculty f ON g.faculty_id = f.faculty_id
 WHERE 
-    faculty.id = 1;
+    f.faculty_name = 'Faculty of Social Studies';
 
 SELECT
-    faculty.id AS 'faculty_id',
-    faculty.name AS 'faculty_name',
-    students.* 
+    f.faculty_id,
+    f.faculty_name,
+    s.* 
 FROM 
-    students
-JOIN 
-    groups ON students.group_id = groups.id
-JOIN 
-    faculty ON groups.faculty_id = faculty.id
+    student s
+    JOIN faculty_group g ON s.group_id = g.group_id
+    JOIN faculty f ON g.faculty_id = f.faculty_id
 WHERE 
-    faculty.id = 1;
+    f.faculty_name = 'Faculty of Social Studies';
