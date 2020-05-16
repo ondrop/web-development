@@ -109,12 +109,14 @@ WHERE
     f.faculty_name = 'Faculty of Social Studies';
 
 SELECT
-    f.faculty_id,
     f.faculty_name,
-    s.* 
+    g.group_name,
+    CONCAT_WS(' ', s.first_name, s.last_name) AS 'student_name',
+    s.age 
 FROM 
     student s
     JOIN faculty_group g ON s.group_id = g.group_id
     JOIN faculty f ON g.faculty_id = f.faculty_id
 WHERE 
-    f.faculty_name = 'Faculty of Social Studies';
+    s.first_name = 'Andrey'
+    AND s.last_name = 'Petrov';
