@@ -12,11 +12,6 @@ function saveFeedbackPage()
     $country = getPOSTParameter('country');
     $gender = getPOSTParameter('gender');
     $message = getPOSTParameter('message');
-    if (!file_exists(FOLDER)) 
-    {
-        mkdir(FOLDER, 0777, true);
-    }
-
     $checkName = preg_match("/[a-zA-Zа-ЯА-Я]/", $firstName);
     $checkEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
 
