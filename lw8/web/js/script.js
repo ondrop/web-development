@@ -39,7 +39,8 @@ function rightMove() {
             transformForFilm += stepFilm;            
         }
  
-        changePos(rightItemPos, minusIndex, maxIndex);
+        rightItemPos = changePos(rightItemPos, minusIndex, maxIndex);
+        console.log('test', rightItemPos);
     }
 
     transformForSlider -= stepSlider;
@@ -51,7 +52,9 @@ function rightMove() {
 
     blockMove(slider, transformForSlider); 
     setTimeout(blockMove, 1000, arrayOfFilms[rightItemPos], transformForFilm);       
-    rightItemPos = rightItemPos + 1;
+    rightItemPos++;
+
+    console.log('вправо ', rightItemPos, maxIndex);
 }
 
 
@@ -59,14 +62,14 @@ function leftMove() {
     buttonLeftPush = true;
 
     if (buttonRightPush) {
-        leftItemPos = rightItemPos + 1;
+        leftItemPos = rightItemPos++;
         buttonRightPush = false;
 
         if (leftItemPos != arrayOfFilms.length) {
             transformForFilm -= stepFilm;
         }
 
-        changePos(leftItemPos, arrayOfFilms.length, minIndex);
+        leftItemPos = changePos(leftItemPos, arrayOfFilms.length, minIndex);
     }
 
     transformForSlider += stepSlider;
@@ -84,12 +87,16 @@ function leftMove() {
     }
 
     blockMove(arrayOfFilms[leftItemPos], transformForFilm);
+
+    console.log('влево ', leftItemPos);
 }
 
-function changePos(rightItemPos, minusIndex, maxIndex) {
-    if (rightItemPos == minusIndex) {
-        rightItemPos = maxIndex;
+function changePos(itemPos, minusIndex, maxIndex) {
+    if (itemPos == minusIndex) {
+        itemPos = maxIndex;
     }
+
+    return itemPos;
 }
 
 function blockMove(slider, transform) {
