@@ -1,11 +1,7 @@
 <?php
-
-const FOLDER = 'data/';
     
 function saveFeedbackPage()
 {
-    $direction = '../';
-    chdir($direction);
     $feedback = [];
     $firstName = getPOSTParameter('first_name');
     $email = getPOSTParameter('email');

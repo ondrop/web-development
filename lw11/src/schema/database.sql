@@ -1,6 +1,5 @@
 CREATE DATABASE lw11;
-USE
-    lw11;
+USE lw11;
 CREATE TABLE user_posts
 (
     id      INT AUTO_INCREMENT  NOT NULL,
