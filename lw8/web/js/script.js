@@ -51,7 +51,7 @@ function rightMove() {
 
     blockMove(slider, transformForSlider); 
     setTimeout(blockMove, 1000, arrayOfFilms[rightItemPos], transformForFilm);       
-    rightItemPos++;
+    rightItemPos = rightItemPos + 1;
 }
 
 
@@ -59,7 +59,7 @@ function leftMove() {
     buttonLeftPush = true;
 
     if (buttonRightPush) {
-        leftItemPos = rightItemPos++;
+        leftItemPos = rightItemPos + 1;
         buttonRightPush = false;
 
         if (leftItemPos != arrayOfFilms.length) {
@@ -70,7 +70,7 @@ function leftMove() {
     }
 
     transformForSlider += stepSlider;
-    leftItemPos--;
+    leftItemPos = leftItemPos - 1;
 
     if (leftItemPos == maxIndex) {
         transformForFilm -= stepFilm;
