@@ -1,0 +1,825 @@
+body
+{
+    margin: 0;
+}
+
+/*---------------- МЕНЮ --------------*/
+
+.page_header_case
+{
+    position: sticky;
+    top: 0;
+    background-color: #FFF;
+    z-index: 1;
+}
+
+.page_header
+{
+    display: flex;
+    margin: 0;
+    font: 500 4.7vw/1em Georgia, serif;
+    height: 3em;
+}
+
+@media screen and (min-width: 481px)
+{
+    .page_header
+    {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .page_header
+    {
+        width: 90%;
+        margin-left: 8vw; 
+        font-size: 2vw;
+    }
+}
+
+.nav
+{
+    margin: 0;
+    padding: 1em .3em;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #333;
+    transition: background-color .3s ease;
+}
+
+@media screen and (min-width: 481px)
+{
+    .nav
+    {
+        padding: 4vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .nav
+    {
+        padding: 2vw;
+    }
+
+    .icon_vita,
+    .icon_hobby,
+    .icon_film
+    {
+        margin: 0 .5rem;
+    }
+
+    .icon_vita
+    {
+        content: url("../images/icons/about_me_icon.png");
+    }
+
+    .icon_hobby
+    {
+        content: url("../images/icons/hobby_icon.png");
+    }
+
+    .icon_film
+    {
+        content: url("../images/icons/video_icon.png");
+    }
+}
+
+.nav_vita
+{
+    width: 45vw;
+}
+
+.nav_hobby
+{
+    width: 55vw;
+}
+
+@media screen and (min-width: 769px)
+{
+    .nav
+    {
+        width: auto;
+    }
+}
+
+/*---------------- ТЕЛО --------------*/
+
+.background_img_case
+{
+    height: 170vw;
+    max-width: 100vw;
+    position: absolute;
+    z-index: -1;
+    content: url("../images/background_for_mobile.png");
+    clip: rect(0, 100vw, 170vw, 0);
+}
+
+@media screen and (min-width: 481px)
+{
+    .background_img_case
+    {
+        height: 138vw;
+        clip: rect(0, 100vw, 138vw, 0);
+    }
+}
+
+.case_top
+{
+    margin: -8vw 8vw 0 8vw; /*Отрицаиельный margin-top для ссылки-якоря*/ 
+    padding-top: 14vw;
+    display: flex;
+    flex-flow: wrap;
+}
+
+@media screen and (min-width: 481px)
+{
+    .case_top
+    {
+        margin: -4vw 4vw 0 4vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .case_top
+    {
+        flex-flow: row wrap;
+        margin: -4vw auto 0 auto;
+        max-width: 97%; 
+    }
+}
+
+.photo_case
+{
+    max-width: 100vw; 
+}
+
+@media screen and (min-width: 481px)
+{
+    .photo_case
+    {
+        margin: 0 auto;
+        max-width: 80vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .photo_case
+    {
+        margin: 0;
+        width: 48%; 
+    }
+}
+
+.photo_pos
+{
+    display: block;
+    order: 0;
+    border-radius: 4vw;
+    width: 84vw;
+}
+
+@media screen and (min-width: 481px)
+{
+    .photo_pos
+    {
+        margin: 0 auto;
+        max-width: 90%;
+        border-radius: 2vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .photo_pos
+    {
+        max-width: 98%;
+        border-radius: .4rem; 
+    }
+}
+
+.head_name
+{
+    order: 1;
+    margin: 4vw auto;
+    color: #FFF;
+    font: 700 9.5vw/1em Open Sans, sans-serif;
+}
+
+@media screen and (min-width: 769px)
+{
+    .head_name
+    {
+        order: 2;
+    }
+}
+
+.quote_block
+{
+    order: 2;
+}
+
+@media screen and (min-width: 769px)
+{
+    .quote_block
+    {
+        order: 1; 
+        width: 50%;
+    }
+}
+
+.vita_case
+{
+    order: 3;
+    color: #555;
+    font: 500 5vw/1.4em Georgia, serif;
+    margin-top: 10vw;
+    text-align: justify;
+}
+
+@media screen and (min-width: 481px)
+{
+    .vita_case
+    {
+        font-size: 1.2rem;    
+    }
+}
+
+.list
+{
+    order: 4;
+}
+
+@media screen and (min-width: 481px)
+{
+    .list
+    {
+        display: flex;      
+        margin: 0 auto;  
+    }
+
+    .list_ul,
+    .list_ol
+    {
+        width: 45vw;
+    }
+
+    .list_ul
+    {
+        float: left;
+    }
+
+    .list_ol
+    {
+        float: right;
+    }
+}
+
+.div_quote
+{
+    margin-left: 3vw; 
+}
+
+@media screen and (min-width: 481px)
+{
+    .div_quote
+    {
+        margin: 0 7vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .div_quote
+    {
+        margin: 0 2rem;
+    }
+}
+
+.text_quote
+{   
+    margin: 5vw 0 0 0;
+    font: italic 500 6vw/1.4em Georgia, serif;
+    color: #FFF;
+}
+
+@media screen and (min-width: 481px)
+{
+    .text_quote
+    {
+        margin-top: 3vw;
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    .text_quote
+    {
+        font-size: 1.7rem; 
+    }
+}
+
+.sign
+{   
+    max-height: 1em;
+    margin-left: 3vw;
+    display: block;
+    color: #FFF;    
+    margin-top: 1em;
+    font: 700 4vw/1em Open Sans, sans-serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .sign
+    {
+        margin-left: 5vw;
+        font-size: 2.7vw;
+    }
+}
+
+.hobby
+{
+    margin: 2vw 0 0 0;
+}
+
+@media screen and (min-width: 481px)
+{
+    .hobby
+    {
+        margin-top: 1vw;    
+    }
+}
+
+.head_hobby
+{
+    color: #333;
+    text-align: center;
+    margin: -10vw 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
+    padding-top: 10vw;
+    font: 600 9vw/1.7 Open Sans, sans-serif; 
+}
+
+@media screen and (min-width: 481px)
+{
+    .head_hobby
+    {
+        margin: -8vw 0 0 0; 
+        padding-top: 8vw;
+        font-size: 6vw;    
+    }
+}
+
+.link
+{
+    color: #45C3AA;
+    font: 500 7vw/1.7 Georgia, serif;
+    text-decoration: none;
+    border-bottom: 1px #45C3AA solid;
+}
+
+@media screen and (min-width: 481px)
+{
+    .link
+    {
+        font-size: 1.5rem;    
+    }
+}
+
+.link_vk
+{
+    text-align: center;
+    color: #45C3AA;
+    display: block;
+    margin-top: 5vw;
+    text-decoration: none;
+}
+
+.list_title
+{
+    display: block;
+    color: #45C3AA;
+    font: 600 6vw/1em Open Sans, sans-serif;
+    margin: 10vw 0 0 0;
+}
+
+@media screen and (min-width: 481px)
+{
+    .list_title
+    {
+        padding-left: 6vw;
+        font-size: 1.6rem;
+    }
+}
+
+.list_text
+{
+    color: #555;
+    margin: 3vw 0 0 0;
+    padding: 0 0 0 12vw;
+    font: 5vw/1.9 Georgia, serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .list_text
+    {
+        font-size: 1rem;
+    }
+}
+
+/*==================ФИЛЬМЫ===================*/
+
+.favorite_films_case_background
+{
+    margin-top: 15vw;
+    text-align: center;
+    background: linear-gradient(to bottom, #FFF 10vw , #F9F9F9 0);
+    padding: 0 4vw;
+}
+
+@media screen and (min-width: 481px)
+{
+    .favorite_films_case_background
+    {
+        background: linear-gradient(to bottom, #FFF 5vw , #F9F9F9 0);  
+    }
+}
+
+.favorite_films_case_head
+{
+    color: #333;
+    font: 500 9vw/1em Open Sans, sans-serif;
+    margin: -15vw 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
+    padding: 15vw 0 0 0;
+}
+
+@media screen and (min-width: 481px)
+{
+    .favorite_films_case_head
+    {
+        font-size: 2.3rem;  
+        margin: -10vw 0 0 0; 
+        padding: 10vw 0 0 0;  
+    }
+
+    .favorite_films
+    {
+        display: flex;  
+        flex-flow: row wrap;
+        max-width: 100%;
+    }
+}
+
+.film
+{
+    margin: 6vw 0 0 0; 
+    padding: 0 4vw;
+    font: 500 4.5vw/1.6 Georgia, serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .film
+    { 
+        width: 46%;
+        margin: 2rem auto 0 auto;
+        padding: 0;
+    }
+
+    .second_film
+    {
+        order: 2;
+    }
+
+    .third_film
+    {
+        order: 3;
+    }
+}
+
+.film_image_case
+{
+    width: 100%;
+    height: 53vw;
+    overflow: hidden;
+    background-color: #464646;
+    margin: 0;
+    border-radius: 4vw;
+}
+
+@media screen and (min-width: 481px)
+{
+    .film_image_case
+    { 
+        height: 28vw;
+        border-radius: 1vw;
+    }
+}
+
+.film_img
+{
+    width: 100%;
+}
+
+.film_head
+{
+    display: block;
+    margin-top: 3vw;
+    font: 600 7vw/1.5 Open Sans, sans-serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .film_head
+    { 
+        margin-top: 1rem;
+        font-size: 3.5vw;
+    }
+}
+
+.film_description
+{
+    margin: 2vw 0 0 0;
+    text-align: justify;    
+}
+
+@media screen and (min-width: 481px)
+{
+    .film_description
+    { 
+        font-size: 2.5vw;
+    }
+}
+
+.button_case
+{
+    padding: 8vw 0; 
+}
+
+.button_all_films
+{
+    display: block;
+    text-decoration: none;
+    margin: 0 auto; 
+    background-color: #45C3AA;
+    width: 50vw;
+    border-radius: 5px;
+    font: 4.5vw/3 Georgia, serif;
+    color: #FFF;
+}
+
+@media screen and (min-width: 481px)
+{
+    .button_all_films
+    { 
+        width: 12rem;
+        font-size: 1rem;
+    }
+}
+
+/*==============ФОРМА================*/
+
+.form_case
+{
+    padding: 0 8vw;
+}
+
+
+.form_head
+{
+    margin-top: 8vw; 
+}
+
+
+.form_header
+{
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0;
+    font: 300 8vw/1em Open Sans, sans-serif; 
+}
+
+.form_header:before,
+.form_header:after
+{
+    display: inline-block;
+    margin: 0 1vw 3vw 0;
+    width: 12vw;
+    content: '';
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.form_header:after
+{
+    margin: 0 0 3vw 1vw;
+}
+
+@media screen and (min-width: 481px)
+{
+    .form_header
+    { 
+        margin: 0 auto; 
+        font-size: 5.5vw;
+    }
+
+    .form_header:before,
+    .form_header:after
+    {
+        margin: 0 1vw 2.5vw 0;
+        width: 21vw;
+        content: '';
+        border-bottom: 1px solid #C4C4C4;
+    }
+
+    .form_header:after
+    {
+        margin-left: 1vw;
+    }
+}
+
+.form_body
+{
+    margin: 12vw 0 0 0;
+    font: 400 5vw/1em Open Sans, sans-serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .form_body
+    {  
+        margin: 12vw auto 0 auto;
+        width: 79vw;
+        max-width: 540px;
+        font-size: 1.3rem;
+    }
+}
+
+.for_input_tag
+{
+    padding: 3vw;
+    margin-top: 2vw; 
+    width: 79vw;
+    font: 400 4vw/1em Open Sans, sans-serif;
+    border-radius: 3px;
+    border: 2px solid #A6A6A6;
+}
+
+@media screen and (min-width: 481px)
+{
+    .for_input_tag
+    {  
+        display: block;
+        margin: 2vw auto 0 auto;
+        max-width: 100%;
+        padding: 1.5vw;
+        font-size: 2.5vw;
+        box-sizing: border-box;
+        max-height: 50px;  
+    }
+}
+
+.for_input_tag:focus
+{
+    outline: none;
+    border-color: #15A98C;
+}   
+
+.label_star:after
+{
+    color: #EE0707;
+    content: " *"
+}
+
+.for_label_tag
+{
+    display: block;
+    margin-top: 7vw; 
+}
+
+@media screen and (min-width: 481px)
+{
+    .for_label_tag
+    {  
+        max-width: 100%;
+        margin: 5vw auto 0 auto;
+    }
+}
+
+.for_select_tag
+{
+    height: 11.5vw;
+    padding: 0 3vw;
+    box-sizing: content-box;
+    background: url("../images/arrow_select.png") no-repeat 76vw 5vw;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-width: 2px;
+}
+
+@media screen and (min-width: 481px)
+{
+    .for_select_tag
+    {  
+        box-sizing: border-box;
+        background-position: 95% 50%;
+        height: 7.4vw;
+    }
+}
+
+.label_gender
+{
+    margin: 9vw 0 0 0;
+}
+
+.input_radio_gender
+{
+    margin: 4vw 0 0 2vw;
+    transform: scale(1.7);
+    opacity: 0.9;
+}
+
+@media screen and (min-width: 481px)
+{
+    .input_radio_gender
+    {  
+        transform: scale(1.4);
+    }
+}
+
+.label_radio_gender
+{
+    vertical-align: top;
+    margin: 3vw 9vw 0 4vw;
+    display: inline-block;
+    font: 400 5vw/1em Open Sans, sans-serif;
+}
+
+@media screen and (min-width: 481px)
+{
+    .label_radio_gender
+    {  
+        margin-top: 3.5vw;
+        font-size: 1.1rem;
+    }
+}
+
+.label_message
+{
+    margin-top: 11vw;
+}
+
+.textarea_message
+{
+    height: 30vw;
+    resize: none;
+    border-radius: 3px;
+    border: 2px solid #A6A6A6;
+}
+
+@media screen and (min-width: 481px)
+{
+    .textarea_message
+    {  
+        max-height: 150px;
+    }
+}
+
+.button_send
+{
+    display: block;
+    margin-top: 9vw;
+    border-style: none;
+}
+
+/*---------------- ПОДВАЛ --------------*/
+
+.footer
+{
+    color: #555;
+    margin: 12vw 0 0 0;
+    padding: 5vw 2vw;
+    background-color: #F5F5F5;
+    font: 500 4vw/1.3em Georgia, serif;
+    text-align: center;
+    word-spacing: 4.5vw;
+}
+
+@media screen and (min-width: 481px)
+{
+    .footer
+    {  
+        margin-top: 9vw;
+        padding: 5vw 3vw; 
+        font-size: 1rem;
+        word-spacing: 1px;
+    }
+}

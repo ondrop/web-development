@@ -54,7 +54,7 @@ body
 .icon_film
 {
     content: url("../images/icons/video_icon.png");
-    margin: 2px 6px 0 14px;  
+    margin: 2px 6px 0 14px; 
 }
 
 .nav:hover .icon_vita,
@@ -134,7 +134,7 @@ body
 }
 
 .right_top_case:hover .quote
-{
+{   
     opacity: 1;
     transition: .25s opacity;
 }
@@ -153,8 +153,7 @@ body
     width: 330px;
 }
 
-.list_tit_ul,
-.list_tit_ol
+.list_title
 {
     display: block;
     width: 330px;
@@ -164,13 +163,12 @@ body
     margin: 49px 0 0 0; 
 }
 
-.list_tit_ol
+.list_title_ol
 {
     margin-top: 46px;
 }
 
-.ul_text,
-.ol_text
+.list_text
 {
     width: 309px;
     color: #555;
@@ -179,7 +177,7 @@ body
     font: 19px/1.9 Georgia, serif;
 }
 
-.ol_text
+.ol_list_text
 {
     margin-top: 15px;
 }
@@ -200,7 +198,7 @@ body
 
 .quote
 {
-     margin: 6px 0 0 3px;
+    margin: 6px 0 0 3px;
     position: absolute;
     opacity: 0;
     transition: .25s opacity;
@@ -241,14 +239,11 @@ body
 
 .hobby
 {
-    color: #555;
-    font: 500 19px/1.7 Georgia, serif;
     margin: 5px 0 0 0;
 }
 
 .head_hobby
 {
-    display: block;
     color: #333;
     margin: -22px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
     padding-top: 55px;
@@ -294,7 +289,7 @@ body
 .favorite_films_case_head
 {
     margin: 97px auto 55px auto;
-    padding-left: 19px;
+    padding-left: 16px;
     width: 1200px;
     letter-spacing: 0.1px;
 }
@@ -304,15 +299,13 @@ body
     color: #333;
     font: 500 36px/1em Open Sans, sans-serif;
     margin: -55px 0 0 0; /*Отрицаиельный margin-top для ссылки-якоря*/ 
-    padding: 55px 0 0 109px;
+    padding: 55px 0 0 0;
 }
 
 .favorite_films
 {
     margin: 36px 0 0 0; 
     display: flex;
-    width: 1220px;
-    transition: transform 1s ease;
 }
 
 .film,
@@ -337,6 +330,11 @@ body
     height: 190px;
     margin: 0;
     border-radius: 5px;
+}
+
+.film_img_width
+{
+    width: 285px;
 }
 
 .film_head
@@ -385,96 +383,6 @@ body
     margin: 15px 0 0 0;
     font: 19px/1em Georgia, serif;
     color: #FFF;
-}
-
-/*---------------- КАРУСЕЛЬ ФИЛЬМОВ --------------*/
-
-.slider_control
-{
-    z-index: 1;
-    transition: background-color .3s ease;
-
-}
-
-.film
-{
-    margin-right: 0;
-    padding-right: 20px;  
-}
-
-.movie_picture
-{
-    height: 190px;
-}
-
-.movie_four
-{
-    width: 285px;
-}
-
-.slider_films
-{
-    overflow: hidden;
-    width: 1220px;
-}
-
-.favorite_films_case
-{ 
-    width: 1420px;
-}
-
-.favorite_films_slider
-{
-    display: flex;
-}
-
-.slider_left,
-.slider_right
-{
-    display: inline-block;
-    background-color: #45C3AA;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    margin: 102px 40px 0 0;
-    cursor: pointer;
-}
-
-.slider_right
-{
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    margin: 102px 0 0 41px;
-}
-
-.slider_left:hover,
-.slider_right:hover
-{
-    background-color: #098D71;
-}
-
-.slider_arrow_left,
-.slider_arrow_right
-{
-    width: 19.66px;
-    height: 33px;
-    margin: 24px 0 0 18px;
-}
-
-.arrow_first_line
-{   
-    width: 25px;
-    height: 0;
-    border: 1.5px solid #FFF;
-    transform: rotate(-45deg);
-    margin-bottom: 15px;
-}
-
-.arrow_second_line
-{
-    width: 22.94px;
-    height: 0;
-    border: 1.5px solid #FFF;
-    transform: rotate(49.21deg);
 }
 
 /*---------------- ПОДВАЛ --------------*/
@@ -600,13 +508,11 @@ body
     margin: 8px 36px 0 8px;
     display: inline-block;
     font: 400 18px/1em Open Sans, sans-serif;
-    cursor: pointer;
 }
 
 .input_radio_gender
 {
     margin: 12px 0 0 0;
-    cursor: pointer;
 }
 
 .country_head
@@ -630,15 +536,10 @@ body
     width: 540px;
 }
 
-.send_and_check
-{
-    display: flex;
-    margin: 47px 0 0 0;
-}
-
 .button_send
 {
     display: block;
+    margin: 47px 0 0 1px;
     width: 220px;
     height: 50px;
     border-radius: 5px;
@@ -656,43 +557,7 @@ body
     background-color: #098D71;
 }
 
-.succesfull_sending
-{
-    display: flex;
-    opacity: 0;
-}
-
-.check_mark
-{
-    display: block;
-    width: 27px;
-    height: 28px;
-    margin: 11px 0 0 31px;
-    content: url("../images/icons/check_mark.png");
-}
-
-.state_check_message
-{
-    display: block;
-    margin: 9px 0 0 14px;
-    width: 138px;
-    height: 32px;
-    font: 400 14px/17px Roboto, sans-serif;
-    color: #2E2B2B;   
-}
-
 .transition
 {
     transition: all .3s ease;
-}
-
-.border_color_error,
-.border_color_error:hover
-{
-    border-color: #F00;
-}
-
-.visibility_message
-{
-    opacity: 1;
 }
